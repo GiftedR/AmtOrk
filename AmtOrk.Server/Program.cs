@@ -1,6 +1,4 @@
-
 using AmtOrk.Server.Data;
-// using Microsoft.EntityFrameworkCore;
 
 namespace AmtOrk.Server
 {
@@ -9,6 +7,9 @@ namespace AmtOrk.Server
 		public static void Main(string[] args)
 		{
 			var builder = WebApplication.CreateBuilder(args);
+			// builder.Services.AddDbContext<AmtOrkContext>(options => 
+			// 	options.UseLiteDB(builder.Configuration.GetConnectionString(""))
+			// );
 
 			// Add services to the container.
 

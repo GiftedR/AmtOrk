@@ -1,37 +1,35 @@
 using AmtOrk.Server.Data;
+using AmtOrk.Server.Data.Types;
 using AmtOrk.Server.Models;
 using Microsoft.AspNetCore.Mvc;
-using FileDB.Library;
-using FileDB.Library.Exceptions;
-// using Microsoft.EntityFrameworkCore;
 
 namespace AmtOrk.Server.Controllers
 {
-    public class TEntity {} // This is here cause it wouldnt let me import a TEntity
+	public class TEntity {} // This is here cause it wouldnt let me import a TEntity
 
-    public class GenericController<M> : ControllerBase where M : RootModel
-    {
+	public class GenericController<M> : ControllerBase where M : RootModel
+	{
 		protected readonly AmtOrkContext _context;
-        protected readonly DbSet<M> _dbSet;
+		protected readonly Table<M> _tbl;
 
-		public GenericController(AmtOrkContext context, DbSet<M> set)
+		public GenericController(AmtOrkContext context, Table<M> table)
 		{
 			_context = context;
-            _dbSet = set;
+			_tbl = table;
 		}
 
 		// GET: api/Item
 		[HttpGet]
 		public async Task<ActionResult<IEnumerable<M>>> GetAll()
 		{
-			return await _dbSet.ToListAsync();
+			return await _tbl.ToListAsync();
 		}
 
 		// GET: api/Item/5
 		[HttpGet("{id}")]
 		public async Task<ActionResult<M>> GetItem(int id)
 		{
-			var item = await _dbSet.FindAsync(id);
+			var item = await _tbl.FindAsync(id);
 
 			if (item == null)
 			{
@@ -77,7 +75,7 @@ namespace AmtOrk.Server.Controllers
 		[HttpPost]
 		public async Task<ActionResult<M>> PostItem(M Item)
 		{
-			_dbSet.Add(Item);
+			_tbl.Add(Item);
 			await _context.SaveChangesAsync();
 
 			return CreatedAtAction("GetItem", new { id = Item.Id }, Item);
@@ -87,12 +85,12 @@ namespace AmtOrk.Server.Controllers
 		[HttpDelete("{id}")]
 		public async Task<IActionResult> DeleteItem(int id)
 		{
-			var Item = await _dbSet.FindAsync(id);
+			var Item = await _tbl.FindAsync(id);
 			if (Item == null)
 			{
 				return NotFound();
 			}
-			_dbSet.Remove(Item);
+			_tbl.Remove(Item);
 			await _context.SaveChangesAsync();
 
 			return NoContent();
@@ -100,7 +98,7 @@ namespace AmtOrk.Server.Controllers
 
 		private bool ItemExists(int id)
 		{
-			return _dbSet.Any(e => e.Id == id);
+			return _tbl.Any(e => e.Id == id);
 		}
-    }
+	}
 }
