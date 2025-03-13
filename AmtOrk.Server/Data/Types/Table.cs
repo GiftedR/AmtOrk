@@ -4,17 +4,18 @@ namespace AmtOrk.Server.Data.Types;
 
 public class Table<Model> where Model : RootModel
 {
-	public void ToListAsync()
+
+	public async Task<IEnumerable<Model>> ToListAsync()
+	{
+		return AmtOrkContext.Database.GetCollection<Model>().FindAll();
+	}
+
+	public async void FindAsync()
 	{
 
 	}
 
-	public void FindAsync()
-	{
-
-	}
-
-	public void Any()
+	public async void Any()
 	{
 		
 	}

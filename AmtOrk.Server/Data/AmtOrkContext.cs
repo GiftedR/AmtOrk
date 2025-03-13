@@ -10,6 +10,9 @@ namespace AmtOrk.Server.Data;
 /// </summary>
 public class AmtOrkContext
 {
+	public static LiteDatabase Database { get => _Instance._ldb; }
+	private static AmtOrkContext _Instance;
+
 	private LiteDatabase _ldb;
 
 	public Table<Credit> Credit { get; set; } = default!;
@@ -17,11 +20,12 @@ public class AmtOrkContext
 	public AmtOrkContext()
 	{
 		_ldb = new LiteDatabase(@"AmtOrk.db");
+		_Instance = this;
 	}
 
 	~AmtOrkContext()
 	{
-
+		
 	}
 
 	public void SaveChangesAsync()
