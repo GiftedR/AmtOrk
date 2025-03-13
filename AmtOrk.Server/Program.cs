@@ -1,16 +1,20 @@
 using AmtOrk.Server.Data;
+using AmtOrk.Server.EFCore.Extensions;
+using Microsoft.EntityFrameworkCore;
 
 namespace AmtOrk.Server
 {
 	public class Program
 	{
+		public static string ConnectionString { get; private set; } = "";
+
 		public static void Main(string[] args)
 		{
 			var builder = WebApplication.CreateBuilder(args);
-			// builder.Services.AddDbContext<AmtOrkContext>(options => 
-			// 	options.UseLiteDB(builder.Configuration.GetConnectionString(""))
-			// );
-
+			
+			// ConnectionString = builder.Configuration.GetConnectionString("LiteDB") ??
+			// 	throw new InvalidOperationException("Connection String Not Found");
+			builder.Services.AddScoped<AmtOrkContext>();
 			// Add services to the container.
 
 			builder.Services.AddControllers();

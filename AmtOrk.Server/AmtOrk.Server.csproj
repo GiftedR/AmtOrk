@@ -15,16 +15,15 @@
     </PackageReference>
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.6.2" />
     <PackageReference Include="LiteDB" Version="5.0.21" />
-    <!-- <PackageReference Include="Microsoft.EntityFrameworkCore" Version="9.0.3" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="9.0.3" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="9.0.3" />
-    <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="9.0.3" /> -->
+    <!-- <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="9.0.3" /> -->
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\amtork.client\amtork.client.esproj">
       <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
     </ProjectReference>
-    <ProjectReference Include="..\FileDB\FileDB.csproj" />
   </ItemGroup>
 
 </Project>
