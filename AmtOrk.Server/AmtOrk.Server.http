@@ -1,6 +1,6 @@
 @AmtOrk.Server_HostAddress = http://localhost:5014
 
-GET {{AmtOrk.Server_HostAddress}}/weatherforecast/
+GET {{AmtOrk.Server_HostAddress}}/api/
 Accept: application/json
 
 ###
