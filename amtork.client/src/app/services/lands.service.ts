@@ -32,7 +32,7 @@ export class LandsService {
   }
 
   updateLand(id:number, land:Land) {
-    this._http.put<Land>(`/api/Lands/${id}`, land).subscribe((land:Land) => {
+    this._http.put<Land>(`/api/Lands/${id}`, land).subscribe((newland:Land) => {
       this.land$.next(land);
     });
   }
@@ -41,5 +41,11 @@ export class LandsService {
     this._http.post<Land>(`/api/Lands/`, land).subscribe((land:Land) => {
       this.land$.next(land);
     });
+  }
+
+  deleteLand(id:number){
+    this._http.delete<Land>(`/api/Lands/${id}`).subscribe((land:Land) => {
+      this.land$.next(land);
+    })
   }
 }

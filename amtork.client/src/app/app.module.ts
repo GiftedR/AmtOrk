@@ -15,6 +15,7 @@ import { KingdomEditComponent } from './kingdoms/kingdom-edit/kingdom-edit.compo
 import { KingdomCreateComponent } from './kingdoms/kingdom-create/kingdom-create.component';
 import { LandCreateComponent } from './lands/land-create/land-create.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { KingdomListEditComponent } from './kingdoms/kingdom-list-edit/kingdom-list-edit.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     LandEditComponent,
     KingdomEditComponent,
     KingdomCreateComponent,
-    LandCreateComponent
+    LandCreateComponent,
+    KingdomListEditComponent
   ],
   imports: [
     BrowserModule,

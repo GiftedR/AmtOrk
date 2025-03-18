@@ -14,8 +14,6 @@ export class LandEditComponent implements OnInit {
 	land:Land = emptyLand;
 	landEditFormGroup:FormGroup;
 
-	finishRedirect:string[] = [];
-
 	constructor(public _route:ActivatedRoute, private _router:Router, private _land:LandsService, private _fb:FormBuilder)
 	{
 		this._router.events.subscribe(routerevent => { if (routerevent instanceof NavigationEnd) this.getLandData(); })
@@ -35,9 +33,9 @@ export class LandEditComponent implements OnInit {
 
 	getLandData() {
 		this._route.paramMap.subscribe(pM => {
-			if (this.land == null) this.land = emptyLand;
+			if (this.land == null) return;
 			this.land.landSlug = pM.get('land')!;
-			this.finishRedirect = ['kingdoms', pM.get("kingdomName")!, pM.get("land")!];
+			// this.finishRedirect = ['kingdoms', pM.get("kingdomName")!, pM.get("land")!];
 			this._land.getLandBySlugName(this.land.landSlug);
 		})
 		
@@ -62,6 +60,6 @@ export class LandEditComponent implements OnInit {
 		const updatedLand : Land = {...this.land, ...this.landEditFormGroup.value };
 
 		this._land.updateLand(updatedLand.id, updatedLand);
-		this._router.navigate(this.finishRedirect);
+		this._router.navigate(['../'], {relativeTo:this._route});
 	}
 }

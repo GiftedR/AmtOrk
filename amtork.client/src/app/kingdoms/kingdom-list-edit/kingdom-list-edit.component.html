@@ -1,0 +1,24 @@
+@let kingdomlist = kingdoms$ | async;
+
+<div class="container">
+	<a class="btn btn-danger m-1" routerLink="../"><< Cancel Editing</a>
+</div>
+
+<div class="container" *ngIf="isLoaded">
+	<div class="border border-2	rounded p-2 m-1 row hoverable" *ngFor="let kingdom of kingdomlist" style="position: relative;">
+		<img class="col-1 heraldry" src="{{ kingdom.kingdomIconPath ?? 'https://placehold.co/64x64' }}" alt="Kingdom Icon" />
+		<div class="col-10 text-center mb-2">
+			<h3 class="card-title">{{ kingdom.kingdomName }}</h3>
+			<p class="card-text"></p><!-- Kingdoms dont come with descriptions -->
+			<!-- <a routerLink="{{ kingdom.kingdomSlug }}" href="#" class="stretched-link"></a> -->
+		</div>
+        <button class="btn btn-danger" (click)="deleteKingdon(kingdom)">Delete</button>
+	</div>
+</div>
+
+
+<div class="container d-flex justify-content-center my-3" *ngIf="!isLoaded">
+	<div class="spinner-border" role="status">
+		<span class="visually-hidden">Loading...</span>
+	</div>
+</div>

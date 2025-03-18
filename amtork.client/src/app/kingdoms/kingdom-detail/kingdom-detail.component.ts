@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
 import { Kingdom } from '../../models/kingdom';
 import { KingdomsService } from '../../services/kingdoms.service';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, NavigationEnd, Router, RouterEvent } from '@angular/router';
 
 @Component({
   selector: 'app-kingdom-detail',
@@ -14,7 +14,7 @@ export class KingdomDetailComponent implements OnInit {
   kingdom$:BehaviorSubject<Kingdom>;
   isLoaded = false;
 
-  constructor(private _kingdom:KingdomsService, private _route:ActivatedRoute)
+  constructor(private _kingdom:KingdomsService, private _route:ActivatedRoute, private _router:Router)
   {
     this.kingdom$ = this._kingdom.kingdom$;
   }

@@ -20,8 +20,10 @@ export class LandDataComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.isLoaded = false;
     this._route.paramMap.subscribe(data => {
       this._land.getLandBySlugName(data.get('land')!);
+      console.log(this.land$)
       this.isLoaded = true;
     });
   }

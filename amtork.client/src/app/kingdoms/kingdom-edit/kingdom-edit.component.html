@@ -1,1 +1,24 @@
-<p>kingdom-edit works!</p>
+@let kingdom = editingKingdom;
+
+<div class="container">
+	<a class="btn btn-danger m-1" routerLink="../"><< Cancel Editing</a>
+</div>
+
+<form [formGroup]="kingdomEditFormGroup" class="container border border-4 mt-1 rounded text-center" *ngIf="kingdom != null" (ngSubmit)="onSubmit()">
+	<img class="col-3" src="{{ kingdom.kingdomIconPath ?? 'https://placehold.co/256x256' }}" alt="Kingdom Icon" />
+	<input class="form-control" type="text" formControlName="kingdomIconPath" value="{{ kingdom.kingdomIconPath ?? 'https://placehold.co/256x256' }}" placeholder="Kingdom Icon Path" />
+    <!-- <h1 class="text-center">{{ kingdom.kingdomName }}</h1> -->
+    <input class="form-control fs-2" type="text" formControlName="kingdomName" value="{{kingdom.kingdomName}}" />
+	
+	<div class="border-top border-bottom border-2 p-2 row hoverable" *ngFor="let land of kingdom.lands" style="position: relative;">
+		<img class="col-1 heraldry" src="{{ land.landIconPath ?? 'https://placehold.co/64x64' }}" alt="Land Icon" />
+		<div class="col-10 mb-2">
+			<h3 class="card-title">{{ land.landName }}</h3>
+			<p class="card-text" *ngIf="land.landDescription != ''">{{ land.landDescription }}</p>
+			<p class="card-text fst-italic" *ngIf="land.landDescription == ''">No Description Provided</p>
+			<!-- <a routerLink="{{ land.landSlug }}" href="#" class="stretched-link"></a> -->
+		</div>
+        <button class="btn btn-danger" (click)="deleteLand(land)">Delete</button>
+	</div>
+    <button class="btn btn-success" type="submit">Confirm Changes</button>
+</form>
