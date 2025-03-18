@@ -9,12 +9,14 @@ export interface Land
 	landDescription:string;
 	landLocation:string;
 	kingdomId:number;
+	landIconPath:string | null;
 	monarch:AmtUser | undefined;
 	regent:AmtUser | undefined;
 	champion:AmtUser | undefined;
 	primeMinister:AmtUser | undefined;
 	gmr:AmtUser | undefined;
 	landEvents:AmtgardEvent[];
+	landSlug:string;
 }
 
 export const emptyLand:Land = {
@@ -28,5 +30,7 @@ export const emptyLand:Land = {
 	champion: undefined,
 	primeMinister: undefined,
 	gmr: undefined,
-	landEvents: []
+	landEvents: [],
+	landSlug: "",
+	landIconPath: null
 }

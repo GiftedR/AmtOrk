@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
 import { Kingdom } from '../../models/kingdom';
 import { KingdomsService } from '../../services/kingdoms.service';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-kingdom-detail',
@@ -11,13 +12,17 @@ import { KingdomsService } from '../../services/kingdoms.service';
 })
 export class KingdomDetailComponent implements OnInit {
   kingdom$:BehaviorSubject<Kingdom>;
+  isLoaded = false;
 
-  constructor(private _kingdom:KingdomsService)
+  constructor(private _kingdom:KingdomsService, private _route:ActivatedRoute)
   {
     this.kingdom$ = this._kingdom.kingdom$;
   }
 
   ngOnInit(): void {
-    
+    this._route.paramMap.subscribe(data => {
+      this._kingdom.getKingdomBySlugName(data.get('kingdomName')!);
+      this.isLoaded = true;
+    });
   }
 }

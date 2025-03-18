@@ -289,6 +289,9 @@ namespace AmtOrk.Server.Migrations
                     b.Property<string>("KingdomDesciption")
                         .HasColumnType("TEXT");
 
+                    b.Property<string>("KingdomIconPath")
+                        .HasColumnType("TEXT");
+
                     b.Property<string>("KingdomName")
                         .IsRequired()
                         .HasColumnType("TEXT");
@@ -323,121 +326,145 @@ namespace AmtOrk.Server.Migrations
                         new
                         {
                             Id = 1,
+                            KingdomIconPath = "https://ork.amtgard.com/assets/heraldry/kingdom/0038.jpg",
                             KingdomName = "13 Roads"
                         },
                         new
                         {
                             Id = 2,
+                            KingdomIconPath = "https://ork.amtgard.com/assets/heraldry/kingdom/0018.jpg",
                             KingdomName = "Kingdom of Desert Winds"
                         },
                         new
                         {
                             Id = 3,
+                            KingdomIconPath = "https://ork.amtgard.com/assets/heraldry/kingdom/0014.jpg",
                             KingdomName = "The Celestial Kingdom"
                         },
                         new
                         {
                             Id = 4,
+                            KingdomIconPath = "https://ork.amtgard.com/assets/heraldry/kingdom/0022.jpg",
                             KingdomName = "The Empire of Rivermoor"
                         },
                         new
                         {
                             Id = 5,
+                            KingdomIconPath = "https://ork.amtgard.com/assets/heraldry/kingdom/0003.jpg",
                             KingdomName = "The Empire of the Iron Mountains"
                         },
                         new
                         {
                             Id = 6,
+                            KingdomIconPath = "https://ork.amtgard.com/assets/heraldry/kingdom/0008.jpg",
                             KingdomName = "The Freeholds of Amtgard"
                         },
                         new
                         {
                             Id = 7,
+                            KingdomIconPath = "https://ork.amtgard.com/assets/heraldry/kingdom/0016.jpg",
                             KingdomName = "The Kingdom of Blackspire"
                         },
                         new
                         {
                             Id = 8,
+                            KingdomIconPath = "https://ork.amtgard.com/assets/heraldry/kingdom/0007.jpg",
                             KingdomName = "The Kingdom of Burning Lands"
                         },
                         new
                         {
                             Id = 9,
+                            KingdomIconPath = "https://ork.amtgard.com/assets/heraldry/kingdom/0017.jpg",
                             KingdomName = "The Kingdom of Crystal Groves"
                         },
                         new
                         {
                             Id = 10,
+                            KingdomIconPath = "https://ork.amtgard.com/assets/heraldry/kingdom/0012.jpg",
                             KingdomName = "The Kingdom of Dragonspine"
                         },
                         new
                         {
                             Id = 11,
+                            KingdomIconPath = "https://ork.amtgard.com/assets/heraldry/kingdom/0004.jpg",
                             KingdomName = "The Kingdom of Goldenvale"
                         },
                         new
                         {
                             Id = 12,
+                            KingdomIconPath = "https://ork.amtgard.com/assets/heraldry/kingdom/0005.jpg",
                             KingdomName = "The Kingdom of Neverwinter"
                         },
                         new
                         {
                             Id = 13,
+                            KingdomIconPath = "https://ork.amtgard.com/assets/heraldry/kingdom/0020.jpg",
                             KingdomName = "The Kingdom of Northern Lights"
                         },
                         new
                         {
                             Id = 14,
+                            KingdomIconPath = "https://ork.amtgard.com/assets/heraldry/kingdom/0036.jpg",
                             KingdomName = "The Kingdom of Northreach"
                         },
                         new
                         {
                             Id = 15,
+                            KingdomIconPath = "https://ork.amtgard.com/assets/heraldry/kingdom/0027.jpg",
                             KingdomName = "The Kingdom of Polaris"
                         },
                         new
                         {
                             Id = 16,
+                            KingdomIconPath = "https://ork.amtgard.com/assets/heraldry/kingdom/0019.jpg",
                             KingdomName = "The Kingdom of Tal Dagore"
                         },
                         new
                         {
                             Id = 17,
+                            KingdomIconPath = "https://ork.amtgard.com/assets/heraldry/kingdom/0006.jpg",
                             KingdomName = "The Kingdom of the Emerald Hills"
                         },
                         new
                         {
                             Id = 18,
+                            KingdomIconPath = "https://ork.amtgard.com/assets/heraldry/kingdom/0011.jpg",
                             KingdomName = "The Kingdom of the Golden Plains"
                         },
                         new
                         {
                             Id = 19,
+                            KingdomIconPath = "https://ork.amtgard.com/assets/heraldry/kingdom/0031.jpg",
                             KingdomName = "The Kingdom of the Nine Blades"
                         },
                         new
                         {
                             Id = 20,
+                            KingdomIconPath = "https://ork.amtgard.com/assets/heraldry/kingdom/0010.jpg",
                             KingdomName = "The Kingdom of the Rising Winds"
                         },
                         new
                         {
                             Id = 21,
+                            KingdomIconPath = "https://ork.amtgard.com/assets/heraldry/kingdom/0001.jpg",
                             KingdomName = "The Kingdom of the Wetlands"
                         },
                         new
                         {
                             Id = 22,
+                            KingdomIconPath = "https://ork.amtgard.com/assets/heraldry/kingdom/0025.jpg",
                             KingdomName = "The Kingdom of Viridian Outlands"
                         },
                         new
                         {
                             Id = 23,
+                            KingdomIconPath = "https://ork.amtgard.com/assets/heraldry/kingdom/0021.jpg",
                             KingdomName = "The Kingdom of Westmarch"
                         },
                         new
                         {
                             Id = 24,
+                            KingdomIconPath = "https://ork.amtgard.com/assets/heraldry/kingdom/0024.jpg",
                             KingdomName = "The Kingdom of Winters Edge"
                         });
                 });
@@ -459,6 +486,9 @@ namespace AmtOrk.Server.Migrations
 
                     b.Property<string>("LandDescription")
                         .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("LandIconPath")
                         .HasColumnType("TEXT");
 
                     b.Property<string>("LandLocation")
@@ -500,6 +530,7 @@ namespace AmtOrk.Server.Migrations
                             Id = 1,
                             KingdomId = 13,
                             LandDescription = "Blade's Edge meets three times a week:\nTuesday @ 4:00pm -Fighter Practice\nFriday @ 4:00pm - Fighter Practice\nSaturday @ 1:00pm -Park Day",
+                            LandIconPath = "https://ork.amtgard.com/assets/heraldry/park/00825.jpg",
                             LandLocation = "2729 Jackson Ave SE, Port Orchard, WA 98366, USA",
                             LandName = "Blade's Edge"
                         },
@@ -507,23 +538,26 @@ namespace AmtOrk.Server.Migrations
                         {
                             Id = 2,
                             KingdomId = 13,
-                            LandDescription = "",
-                            LandLocation = "",
+                            LandDescription = "The Dragons of Fire Valley was formed in 2007 in Chehalis, Washington. The land started with three people searching for a new home. Finding a land rich with tree's and resources in Washington, they had found a new area to set up home. Voting and making it official, the land started its long journey towards prosperity, and are growing constantly each year. Finding a solid support structure within the Northern Lights, the Dragons of Fire Valley have become hosts to several large scale travel days and provide a great group of people for future growth of the Northern Lights and Dragons of Fire Valley itself.",
+                            LandIconPath = "https://ork.amtgard.com/assets/heraldry/park/00355.jpg",
+                            LandLocation = "We meet at noon on Saturdays in Borst Park located in Centralia, Wa.",
                             LandName = "Dragons of Fire Valley"
                         },
                         new
                         {
                             Id = 3,
                             KingdomId = 13,
-                            LandDescription = "",
-                            LandLocation = "",
+                            LandDescription = "We are the Dutchy of Greenwood Keep. We meet at Wonderwood Park in Lacey at 11:00am on Sundays. We enjoy fast paced games, and adventures in the woods. Come out and see us! Very kid friendly, our few smokers are respectful of others, and we often have food! http://www.greenwoodkeep.com/",
+                            LandIconPath = "https://ork.amtgard.com/assets/heraldry/park/00076.jpg",
+                            LandLocation = "Take College to 31st, turning East, then follow the signs for Wonderwood Park.For Fighter Practice, please check on Discord or Facebook as the location and time may change!",
                             LandName = "Greenwood Keep"
                         },
                         new
                         {
                             Id = 4,
                             KingdomId = 13,
-                            LandDescription = "",
+                            LandDescription = "Welcome to Inland Ocean! We play at Marymoor Park in Redmond, WA, Saturdays starting at 12! We are typically at one of the shelters near the Dog Wash in Lot D. If you are looking for us, head towards the dog park, and look for the banner and players, or check our Facebook page, as someone typically posts our exact location. We have Fighter Practice at Frank Love Elementry in the covered basketball court, in Bothell WA. 6-8pm every Thursday.",
+                            LandIconPath = "https://ork.amtgard.com/assets/heraldry/park/00074.jpg",
                             LandLocation = "",
                             LandName = "Inland Ocean"
                         },
@@ -531,7 +565,8 @@ namespace AmtOrk.Server.Migrations
                         {
                             Id = 5,
                             KingdomId = 13,
-                            LandDescription = "",
+                            LandDescription = "Parksville Community Park, at the gazebo by the stage\n\n(Monday fighter practice is at the Qualicum Beach community park, near Ravensong Aquatic Center)",
+                            LandIconPath = "https://ork.amtgard.com/assets/heraldry/park/01043.jpg",
                             LandLocation = "",
                             LandName = "Lost Cove"
                         },
@@ -539,8 +574,9 @@ namespace AmtOrk.Server.Migrations
                         {
                             Id = 6,
                             KingdomId = 13,
-                            LandDescription = "",
-                            LandLocation = "",
+                            LandDescription = "We play every Sunday, starting at Noon at Tam O'Shanter Park in Kelso.",
+                            LandIconPath = "https://ork.amtgard.com/assets/heraldry/park/00124.jpg",
+                            LandLocation = "Directions to Parkn1)Take exit 39 for WA-4 W/Allen Street toward Kelson2)Turn left onto WA-4 W/Allen Stn3)Continue straight onto Allen Stn4)Turn right onto S Kelso Drn5)Turn left onto Tam O'Shanter Wayn6)Continue straight into park",
                             LandName = "Mithril Hills"
                         },
                         new
@@ -548,6 +584,7 @@ namespace AmtOrk.Server.Migrations
                             Id = 7,
                             KingdomId = 13,
                             LandDescription = "",
+                            LandIconPath = "https://ork.amtgard.com/assets/heraldry/park/01042.jpg",
                             LandLocation = "",
                             LandName = "Oceans Alley"
                         },
@@ -555,7 +592,8 @@ namespace AmtOrk.Server.Migrations
                         {
                             Id = 8,
                             KingdomId = 13,
-                            LandDescription = "",
+                            LandDescription = "Our main Park is Central Park in Burnaby. Park days meet at the Band Stand by Swangard Stadium. We also meet regularly for crafting nights, fight practice and special events",
+                            LandIconPath = "https://ork.amtgard.com/assets/heraldry/park/01006.jpg",
                             LandLocation = "",
                             LandName = "Seaside Keep"
                         },
@@ -563,7 +601,8 @@ namespace AmtOrk.Server.Migrations
                         {
                             Id = 9,
                             KingdomId = 13,
-                            LandDescription = "",
+                            LandDescription = "We are an Amtgard land in the Kingdom of Northern Lights. Created in 1988, we meet every Sunday around noon at Sprinker Recreational Park next to Breseman Forest near the Rock Climbing structure (orginally behind the baseball fields). We hope to see you there!",
+                            LandIconPath = "https://ork.amtgard.com/assets/heraldry/park/00118.jpg",
                             LandLocation = "",
                             LandName = "Shrouding Mist"
                         },
@@ -571,15 +610,17 @@ namespace AmtOrk.Server.Migrations
                         {
                             Id = 10,
                             KingdomId = 13,
-                            LandDescription = "",
-                            LandLocation = "",
+                            LandDescription = "The Hollow Discord:\nhttps://discord.com/invite/jxQntTxenS\nFacebook Group:\nhttps://www.facebook.com/groups/120371818682/?ref=share\nFacebook Page:\nhttps://www.facebook.com/share/DZHscqVKJaRhH3QJ/?mibextid=qi2Omg\nInstagram:\nhttps://www.instagram.com/amtgard.thehollow?igsh=YWh6MnhpeHd1d3dt\nKingdom Discord:\nhttps://discord.com/invite/hxWAUQZHMs",
+                            LandIconPath = "https://ork.amtgard.com/assets/heraldry/park/00343.jpg",
+                            LandLocation = "Sundays at noon. Take exit 186 off Interstate 5. Head East on 128th St. SE. McCollum Park will be on your Right in about a half mile. We meet at the North end of the Forest Loop Trail.",
                             LandName = "The Hollow"
                         },
                         new
                         {
                             Id = 11,
                             KingdomId = 13,
-                            LandDescription = "",
+                            LandDescription = "We meet Saturdays at 12:00pm at Vance Creek Park in Elma (Wenzel Slough Rd, Elma, WA 98541)",
+                            LandIconPath = "https://ork.amtgard.com/assets/heraldry/park/01050.jpg",
                             LandLocation = "",
                             LandName = "Three Lakes"
                         });

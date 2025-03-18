@@ -8,9 +8,13 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { HomeComponent } from './home/home.component';
 import { KingdomListComponent } from './kingdoms/kingdom-list/kingdom-list.component';
 import { KingdomDetailComponent } from './kingdoms/kingdom-detail/kingdom-detail.component';
-import { LandListComponent } from './lands/land-list/land-list.component';
 import { LandDataComponent } from './lands/land-data/land-data.component';
 import { FooterComponent } from './footer/footer.component';
+import { LandEditComponent } from './lands/land-edit/land-edit.component';
+import { KingdomEditComponent } from './kingdoms/kingdom-edit/kingdom-edit.component';
+import { KingdomCreateComponent } from './kingdoms/kingdom-create/kingdom-create.component';
+import { LandCreateComponent } from './lands/land-create/land-create.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -19,13 +23,18 @@ import { FooterComponent } from './footer/footer.component';
     HomeComponent,
     KingdomListComponent,
     KingdomDetailComponent,
-    LandListComponent,
     LandDataComponent,
-    FooterComponent
+    FooterComponent,
+    LandEditComponent,
+    KingdomEditComponent,
+    KingdomCreateComponent,
+    LandCreateComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [
     provideHttpClient()

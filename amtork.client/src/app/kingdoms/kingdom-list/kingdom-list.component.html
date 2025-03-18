@@ -1,17 +1,14 @@
 @let kingdomlist = kingdoms$ | async;
 
 <div class="container" *ngIf="isLoaded">
-	<div class="border border-2	rounded p-2 m-1 row" *ngFor="let kingdom of kingdomlist" style="position: relative;">
-		<img class="col-1" src="https://placehold.co/64x64" alt="Kingdom Icon" />
-		<div class="col-10">
-			<h5 class="card-title">{{ kingdom.kingdomName }}</h5>
-			<p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+	<div class="border border-2	rounded p-2 m-1 row hoverable" *ngFor="let kingdom of kingdomlist" style="position: relative;">
+		<img class="col-1 heraldry" src="{{ kingdom.kingdomIconPath ?? 'https://placehold.co/64x64' }}" alt="Kingdom Icon" />
+		<div class="col-10 text-center">
+			<h3 class="card-title">{{ kingdom.kingdomName }}</h3>
+			<p class="card-text"></p><!-- Kingdoms dont come with descriptions -->
 			<a routerLink="{{ kingdom.kingdomSlug }}" href="#" class="stretched-link"></a>
 		</div>
 	</div>
-	<pre>
-		{{kingdomlist | json}}
-	</pre>
 </div>
 
 

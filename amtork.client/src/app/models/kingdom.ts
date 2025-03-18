@@ -6,6 +6,7 @@ export interface Kingdom
 {
 	id:number;
 	kingdomName:string;
+	kingdomIconPath:string | null;
 	lands:Land[];
 	monarch:AmtUser | undefined;
 	regent:AmtUser | undefined;
@@ -27,7 +28,8 @@ export const emptyKingdom:Kingdom =
 	primeMinister: undefined,
 	gmr: undefined,
 	kingdomEvents: [],
-	get kingdomSlug():string {
-		return this.kingdomName.toLowerCase().replace(" ","-");
-	}
+	get kingdomSlug(): string {
+		return this.kingdomName.toLowerCase().replace(" ", "-");
+	},
+	kingdomIconPath: null
 }

@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { LandListComponent } from './land-list.component';
+import { LandEditComponent } from './land-edit.component';
 
-describe('LandListComponent', () => {
-  let component: LandListComponent;
-  let fixture: ComponentFixture<LandListComponent>;
+describe('LandEditComponent', () => {
+  let component: LandEditComponent;
+  let fixture: ComponentFixture<LandEditComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [LandListComponent]
+      declarations: [LandEditComponent]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(LandListComponent);
+    fixture = TestBed.createComponent(LandEditComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

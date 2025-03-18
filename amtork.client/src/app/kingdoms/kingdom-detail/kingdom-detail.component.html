@@ -1,1 +1,27 @@
-<p>kingdom-detail works!</p>
+@let kingdom = kingdom$ | async;
+
+<div class="container">
+	<a class="btn btn-info m-1" routerLink="/kingdoms"><< Back to Kingdoms List</a>
+</div>
+
+<div class="container border border-4 mt-1 rounded text-center" *ngIf="isLoaded && kingdom != null">
+	<img class="col-3" src="{{ kingdom.kingdomIconPath ?? 'https://placehold.co/256x256' }}" alt="Kingdom Icon" />
+	<h1 class="text-center">{{ kingdom.kingdomName }}</h1>
+	
+	<div class="border-top border-bottom border-2 p-2 row hoverable" *ngFor="let land of kingdom.lands" style="position: relative;">
+		<img class="col-1 heraldry" src="{{ land.landIconPath ?? 'https://placehold.co/64x64' }}" alt="Land Icon" />
+		<div class="col-10">
+			<h3 class="card-title">{{ land.landName }}</h3>
+			<p class="card-text" *ngIf="land.landDescription != ''">{{ land.landDescription }}</p>
+			<p class="card-text fst-italic" *ngIf="land.landDescription == ''">No Description Provided</p>
+			<a routerLink="{{ land.landSlug }}" href="#" class="stretched-link"></a>
+		</div>
+	</div>
+</div>
+
+
+<div class="container d-flex justify-content-center my-3" *ngIf="!isLoaded">
+	<div class="spinner-border" role="status">
+		<span class="visually-hidden">Loading...</span>
+	</div>
+</div>

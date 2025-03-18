@@ -21,11 +21,15 @@ export class KingdomsService {
 
   getKingdomById(id:number)
   {
-
+    this._http.get<Kingdom>(`/api/kingdoms/${id}`).subscribe((kingdom:Kingdom) => {
+      this.kingdom$.next(kingdom);
+    });
   }
 
   getKingdomBySlugName(slug:string)
   {
-    
+    this._http.get<Kingdom>(`/api/kingdoms/name/${slug}`).subscribe((kingdom:Kingdom) => {
+      this.kingdom$.next(kingdom);
+    });
   }
 }
