@@ -25,10 +25,10 @@ public class AmtOrkContext : DbContext
 
 		modelBuilder.Entity<Classes>().HasIndex(c => c.ClassName).IsUnique();
 
-		modelBuilder.Entity<Credit>().Navigation(c => c.CreditClass).AutoInclude();
-		modelBuilder.Entity<Credit>().Navigation(c => c.CreditKingdom).AutoInclude();
-		modelBuilder.Entity<Credit>().Navigation(c => c.CreditPark).AutoInclude();
-		modelBuilder.Entity<Credit>().Navigation(c => c.CreditEvent).AutoInclude();
+		// modelBuilder.Entity<Credit>().Navigation(c => c.CreditClassId).AutoInclude();
+		// modelBuilder.Entity<Credit>().Navigation(c => c.CreditKingdomId).AutoInclude();
+		// modelBuilder.Entity<Credit>().Navigation(c => c.CreditParkId).AutoInclude();
+		// modelBuilder.Entity<Credit>().Navigation(c => c.CreditEventId).AutoInclude();
 
 		modelBuilder.Entity<Kingdom>().Navigation(k => k.Lands).AutoInclude();
 		modelBuilder.Entity<Kingdom>().HasIndex(k => k.KingdomName).IsUnique();

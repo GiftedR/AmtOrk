@@ -10,6 +10,7 @@ import { KingdomListComponent } from './kingdoms/kingdom-list/kingdom-list.compo
 import { KingdomDetailComponent } from './kingdoms/kingdom-detail/kingdom-detail.component';
 import { LandListComponent } from './lands/land-list/land-list.component';
 import { LandDataComponent } from './lands/land-data/land-data.component';
+import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -19,13 +20,16 @@ import { LandDataComponent } from './lands/land-data/land-data.component';
     KingdomListComponent,
     KingdomDetailComponent,
     LandListComponent,
-    LandDataComponent
+    LandDataComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule
   ],
-  providers: [provideHttpClient()],
+  providers: [
+    provideHttpClient()
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

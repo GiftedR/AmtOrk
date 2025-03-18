@@ -13,6 +13,7 @@ export interface Kingdom
 	primeMinister:AmtUser | undefined;
 	gmr:AmtUser | undefined;
 	kingdomEvents:AmtgardEvent[];
+	readonly kingdomSlug:string;
 }
 
 export const emptyKingdom:Kingdom =
@@ -25,5 +26,8 @@ export const emptyKingdom:Kingdom =
 	champion: undefined,
 	primeMinister: undefined,
 	gmr: undefined,
-	kingdomEvents: []
+	kingdomEvents: [],
+	get kingdomSlug():string {
+		return this.kingdomName.toLowerCase().replace(" ","-");
+	}
 }

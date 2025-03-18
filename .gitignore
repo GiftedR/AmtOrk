@@ -362,5 +362,7 @@ MigrationBackup/
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
 
-# Sqlite database ignore
+# Sqlite database ignores
 *.db
+*.db-shm
+*.db-wal

@@ -87,77 +87,77 @@ public class AmtOrkSeedData
 				LandName = "Blade's Edge",
 				LandDescription = "Blade's Edge meets three times a week:\nTuesday @ 4:00pm -Fighter Practice\nFriday @ 4:00pm - Fighter Practice\nSaturday @ 1:00pm -Park Day",
 				LandLocation = "2729 Jackson Ave SE, Port Orchard, WA 98366, USA",
-				KingdomId = 12
+				KingdomId = 13
 			},
 			new Land{
 				Id = 2,
 				LandName = "Dragons of Fire Valley",
 				LandDescription = "",
 				LandLocation = "",
-				KingdomId = 12
+				KingdomId = 13
 			},
 			new Land{
 				Id = 3,
 				LandName = "Greenwood Keep",
 				LandDescription = "",
 				LandLocation = "",
-				KingdomId = 12
+				KingdomId = 13
 			},
 			new Land{
 				Id = 4,
 				LandName = "Inland Ocean",
 				LandDescription = "",
 				LandLocation = "",
-				KingdomId = 12
+				KingdomId = 13
 			},
 			new Land{
 				Id = 5,
 				LandName = "Lost Cove",
 				LandDescription = "",
 				LandLocation = "",
-				KingdomId = 12
+				KingdomId = 13
 			},
 			new Land{
 				Id = 6,
 				LandName = "Mithril Hills",
 				LandDescription = "",
 				LandLocation = "",
-				KingdomId = 12
+				KingdomId = 13
 			},
 			new Land{
 				Id = 7,
 				LandName = "Oceans Alley",
 				LandDescription = "",
 				LandLocation = "",
-				KingdomId = 12
+				KingdomId = 13
 			},
 			new Land{
 				Id = 8,
 				LandName = "Seaside Keep",
 				LandDescription = "",
 				LandLocation = "",
-				KingdomId = 12
+				KingdomId = 13
 			},
 			new Land{
 				Id = 9,
 				LandName = "Shrouding Mist",
 				LandDescription = "",
 				LandLocation = "",
-				KingdomId = 12
+				KingdomId = 13
 			},
 			new Land{
 				Id = 10,
 				LandName = "The Hollow",
 				LandDescription = "",
 				LandLocation = "",
-				KingdomId = 12
+				KingdomId = 13
 			},
 			new Land{
 				Id = 11,
 				LandName = "Three Lakes",
 				LandDescription = "",
 				LandLocation = "",
-				KingdomId = 12
+				KingdomId = 13
 			}
 		);
 	}
